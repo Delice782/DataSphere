@@ -1,0 +1,47 @@
+@startuml
+class User {
+  -userID: Integer
+  -name: String
+  -email: String
+  -role: Role
+  -password: String
+  +createFeedback()
+  +receiveNotification()
+  +createResponse()
+}
+
+class Feedback {
+  -feedbackID: Integer
+  -content: String
+  -rating: Integer
+  -timestamp: DateTime
+  +generateNotification()
+  +receiveResponse()
+}
+
+class Notification {
+  -notificationID: Integer
+  -message: String
+  -timestamp: DateTime
+  +markAsRead()
+}
+
+class Response {
+  -responseID: Integer
+  -responseText: String
+  -timestamp: DateTime
+}
+
+enum Role {
+  ADMIN
+  CUSTOMER
+}
+
+User "1" -- "0..*" Feedback : creates >
+User "1" -- "0..*" Notification : receives >
+User "1" -- "0..*" Response : authors >
+Feedback "1" -- "0..*" Notification : triggers >
+Feedback "1" -- "0..*" Response : receives >
+User -- Role
+
+@enduml
