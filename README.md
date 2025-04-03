@@ -25,4 +25,10 @@ We will update this README with:
 - **Challenges & Lessons Learned**
 - **Future Enhancements & Roadmap**
 
+## Team members Roles
+- **Project Leader: Lydia**
+- **System Architect: Delice Ishimwe**
+- **Front-End Developers: Sinam & Delice Ishimwe**
+- **Back-End Developers: Susanna & Lydia**
+
 Stay tuned for updates as we build DataSphere!
