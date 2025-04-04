@@ -22,14 +22,16 @@ switch ($action) {
 // Handle user registration
 function handleSignup($conn) {
     // Get form data
-    $name = isset($_POST['name']) ? trim($_POST['name']) : '';
+    $userName = isset($_POST['userName']) ? trim($_POST['userName']) : '';
     $email = isset($_POST['email']) ? trim($_POST['email']) : '';
     $password = isset($_POST['password']) ? $_POST['password'] : '';
     $confirm_password = isset($_POST['confirm_password']) ? $_POST['confirm_password'] : '';
-    $role = isset($_POST['role']) ? $_POST['role'] : 'Customer'; // Default to Customer
+    
+    // Always set role as Customer for security - admins should be created manually or through a separate admin panel
+    $role = 'Customer';
     
     // Validate form data
-    if (empty($name) || empty($email) || empty($password) || empty($confirm_password)) {
+    if (empty($userName) || empty($email) || empty($password) || empty($confirm_password)) {
         redirect_with_error("signup.php", "All fields are required");
     }
     
@@ -62,8 +64,8 @@ function handleSignup($conn) {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     
     // Insert new user
-    $stmt = $conn->prepare("INSERT INTO User (userID, name, email, role, password) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("issss", $newUserID, $name, $email, $role, $hashed_password);
+    $stmt = $conn->prepare("INSERT INTO User (userID, userName, email, role, password) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("issss", $newUserID, $userName, $email, $role, $hashed_password);
     
     if ($stmt->execute()) {
         // Registration successful
@@ -87,7 +89,7 @@ function handleLogin($conn) {
     }
     
     // Check if user exists
-    $stmt = $conn->prepare("SELECT userID, name, email, role, password FROM User WHERE email = ?");
+    $stmt = $conn->prepare("SELECT userID, userName, email, role, password FROM User WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -99,7 +101,7 @@ function handleLogin($conn) {
         if (password_verify($password, $user['password'])) {
             // Login successful, set session variables
             $_SESSION['user_id'] = $user['userID'];
-            $_SESSION['user_name'] = $user['name'];
+            $_SESSION['user_name'] = $user['userName'];
             $_SESSION['user_email'] = $user['email'];
             $_SESSION['user_role'] = $user['role'];
             
