@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Admin Panel</h2>
+    <button>Dashboard</button>
+    <button>Manage Users</button>
+    <button>View Feedback</button>
+    <button>Logout</button>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1>Admin Dashboard</h1>
+
+    <div class="dashboard-cards">
+      <div class="card">Total Users: 16</div>
+      <div class="card">Total Feedback: 20</div>
+      <div class="card">Pending Feedback: 1</div>
+    </div>
+
+    <div class="chart-section">
+      <h2>Statistics Overview</h2>
+      <canvas id="statsChart"></canvas>
+    </div>
+
+    <br>
+    <button class="btn btn-primary">View All Users</button>
+    <button class="btn btn-outline">Review Feedback</button>
+  </div>
+
+  <!-- Chart Script -->
+  <script>
+    const ctx = document.getElementById('statsChart').getContext('2d');
+    const statsChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Users', 'Feedback', 'Pending'],
+        datasets: [{
+          label: 'Admin Statistics',
+          data: [16, 20, 1],
+          backgroundColor: ['#3498db', '#2ecc71', '#e74c3c'],
+          borderRadius: 8,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
