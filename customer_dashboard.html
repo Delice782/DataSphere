@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <h2>InsightHub</h2>
-        <button>Dashboard</button>
-        <button>Submit Feedback</button>
-        <button>Profile</button>
-        <button>Logout</button>
-    </div>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>InsightHub</h2>
+    <a href="customer_dashboard.html"><button>Dashboard</button></a>
+    <a href="feedback.html"><button>Submit Feedback</button></a>
+    <a href="profile.html"><button>Profile</button></a>
+    <a href="logout.php"><button>Logout</button></a>
+  </div>
 
-    <!-- Main Content -->
-    <div class="main-content">
-        <h1>Customer Dashboard</h1>
-        <div class="dashboard-cards">
-            <div class="card">Total Feedback: 0</div>
-            <div class="card">Rating: 0/5</div>
-            <div class="card">No Categories Yet</div>
-        </div>
-        <br>
-        <button class="btn btn-primary">Submit Feedback</button>
-        <button class="btn btn-outline">View All Feedback</button>
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1>Customer Dashboard</h1>
+    <div class="dashboard-cards">
+      <div class="card">Total Feedback: 0</div>
+      <div class="card">Rating: 0/5</div>
+      <div class="card">No Categories Yet</div>
     </div>
+    <br>
+    <a href="feedback.html"><button class="btn btn-primary">Submit Feedback</button></a>
+    <a href="view_feedback.html"><button class="btn btn-outline">View All Feedback</button></a>
+  </div>
 
 </body>
 </html>
