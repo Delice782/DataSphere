@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback Management</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <!-- Sidebar -->
+<div class="sidebar">
+    <h2>InsightHub</h2>
+    <a href="customer_dashboard.html"><button>Dashboard</button></a>
+    <a href="feedback.html"><button>Submit Feedback</button></a>
+    <a href="profile.html"><button>Profile</button></a>
+    <a href="logout.php"><button>Logout</button></a>
+  </div>
+  
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1>Submit Feedback</h1>
+
+    <div class="form-section">
+      <form>
+        <label for="category">Feedback Category</label>
+        <select id="category" name="category">
+          <option value="">-- Select Category --</option>
+          <option value="UI">User Interface</option>
+          <option value="UX">User Experience</option>
+          <option value="Bug">Bug Report</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="message">Your Feedback</label>
+        <textarea id="message" name="message" placeholder="Write your feedback..."></textarea>
+
+        <div class="form-buttons">
+          <button class="btn btn-primary" type="submit">Submit</button>
+          <button class="btn btn-outline" type="reset">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
