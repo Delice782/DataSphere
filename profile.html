@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile Management</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>InsightHub</h2>
+    <a href="customer_dashboard.html"><button>Dashboard</button></a>
+    <a href="feedback.html"><button>Submit Feedback</button></a>
+    <a href="profile.html"><button>Profile</button></a>
+    <a href="logout.php"><button>Logout</button></a>
+  </div>
+  
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1>Manage Profile</h1>
+
+    <div class="form-section">
+      <form>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" />
+
+        <label for="password">Change Password</label>
+        <input type="password" id="password" name="password" placeholder="New password" />
+
+        <div class="form-buttons">
+          <button class="btn btn-primary" type="submit">Save</button>
+          <button class="btn btn-outline" type="reset">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
