@@ -1,4 +1,3 @@
-
 # DataSphere: A Web-Based Customer Feedback Platform
 
 ## Overview
