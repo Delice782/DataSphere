@@ -1,18 +1,37 @@
 <?php
 require_once db_connection;
+session_start();
+
+
+CREATE TABLE `feedback` (
+  `feedbackID` int(11) NOT NULL,
+  `userID` int(11) DEFAULT NULL,
+  `content` text NOT NULL,
+  `rating` int(11) DEFAULT NULL CHECK (`rating` between 1 and 5),
+  `timestamp` datetime DEFAULT current_timestamp(),
+  `status` varchar(255) NOT NULL DEFAULT 'pending'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+ 
+
 
 // === Submit Feedback ===
 function submit_feedback($name, $email, $message) {
     $conn = connect_db();
-    $name = $conn->real_escape_string($name);
-    $email = $conn->real_escape_string($email);
-    $message = $conn->real_escape_string($message);
+     if (!isset($_SESSION['user_id'])) {
+        return ["status" => "error", "message" => "User not logged in."];
+    }
 
-    if (!$name || !$email || !$message) {
+    $user_id = $_SESSION['user_id'];
+    $content = $conn->real_escape_string($content);
+    $rating = $conn->real_escape_string($rating);
+
+    if (!$userID || !$content || !$rating) {
         return ["status" => "error", "message" => "All fields are required."];
     }
 
-    $sql = "INSERT INTO feedbacks (name, email, message) VALUES ('$name', '$email', '$message')";
+    $sql = "INSERT INTO feedback (userID, content, rating, timestamp) VALUES ('$user_id', '$content', '$rating', NOW())";
     if ($conn->query($sql) === TRUE) {
         return ["status" => "success", "message" => "Feedback submitted successfully."];
     } else {
