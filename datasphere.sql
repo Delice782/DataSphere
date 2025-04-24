@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 07, 2025 at 01:33 AM
+-- Generation Time: Apr 24, 2025 at 02:53 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -41,10 +41,8 @@ CREATE TABLE `feedback` (
 --
 
 INSERT INTO `feedback` (`feedbackID`, `userID`, `content`, `rating`, `timestamp`, `status`) VALUES
-(1, 5, 'lkjhgfds', 3, '2025-04-05 17:24:34', 'pending'),
-(2, 5, 'hghh', 4, '2025-04-05 17:27:51', 'pending'),
-(7, 5, 'hg', 2, '2025-04-05 17:33:34', 'pending'),
-(17, 5, 'The app is slow and the screen is blur', 3, '2025-04-06 02:25:54', 'pending');
+(47, 7, 'malfunctionality', 2, '2025-04-24 00:40:35', 'pending'),
+(48, 7, 'usability issues', 1, '2025-04-24 00:40:49', 'responded');
 
 -- --------------------------------------------------------
 
@@ -66,7 +64,40 @@ CREATE TABLE `notification` (
 
 INSERT INTO `notification` (`notificationID`, `userID`, `feedbackID`, `message`, `timestamp`) VALUES
 (1, 1, 1, 'New feedback submitted by Sinam Kk', '2025-04-05 17:24:34'),
-(3, 1, 17, 'New feedback submitted by Sinam Kk', '2025-04-06 02:25:54');
+(3, 1, 17, 'New feedback submitted by Sinam Kk', '2025-04-06 02:25:54'),
+(4, 1, 18, 'New feedback submitted by Sinam Kk', '2025-04-07 15:43:21'),
+(5, 1, 19, 'New feedback submitted by Sinam Ssssss', '2025-04-07 15:47:17'),
+(11, 1, 25, 'New feedback submitted by SS k', '2025-04-08 01:11:43'),
+(12, 1, 26, 'New feedback submitted by SS k', '2025-04-08 01:15:28'),
+(13, 1, 27, 'New feedback submitted by SS k', '2025-04-08 01:15:42'),
+(14, 1, 28, 'New feedback submitted by SS k', '2025-04-08 01:15:57'),
+(15, 1, 29, 'New feedback submitted by SS k', '2025-04-08 01:16:07'),
+(16, 1, 30, 'New feedback submitted by SS k', '2025-04-08 01:16:16'),
+(17, 1, 31, 'New feedback submitted by SS k', '2025-04-08 01:16:24'),
+(18, 1, 32, 'New feedback submitted by SS k', '2025-04-08 01:16:39'),
+(19, 1, 33, 'New feedback submitted by Sinam kk', '2025-04-08 02:56:17'),
+(20, 1, 34, 'New feedback submitted by Sun Koi', '2025-04-11 14:09:55'),
+(21, 1, 35, 'New feedback submitted by Sun Koiiiiiiiiiiiiiii', '2025-04-11 22:03:29'),
+(22, 1, 36, 'New feedback submitted by Sun K', '2025-04-13 20:17:06'),
+(23, 1, 37, 'New feedback submitted by Sun Kai', '2025-04-14 13:52:00'),
+(24, 1, 38, 'New feedback submitted by Sun Kaiiiii', '2025-04-14 14:01:43'),
+(25, 1, 39, 'New feedback submitted by Sun Kaiiiii', '2025-04-14 14:08:11'),
+(26, 1, 40, 'New feedback submitted by Sun Kaiiiii', '2025-04-14 14:13:18'),
+(27, 1, 41, 'New feedback submitted by Sun Ko', '2025-04-14 14:23:04'),
+(28, 1, 42, 'New feedback submitted by Sun Ko', '2025-04-14 14:43:19'),
+(29, 1, 43, 'New feedback submitted by Cynthia Keza', '2025-04-14 14:45:07'),
+(30, 1, 44, 'New feedback submitted by Herve Cyiza', '2025-04-14 14:46:01'),
+(31, 1, 45, 'New feedback submitted by Claire Mbabazi', '2025-04-14 14:47:31'),
+(32, 1, 46, 'New feedback submitted by Sun Ko', '2025-04-20 18:27:53'),
+(33, 6, 40, 'Your feedback has received a response', '2025-04-23 23:31:50'),
+(34, 7, 44, 'Your feedback has received a response', '2025-04-23 23:39:45'),
+(35, 6, 42, 'Your feedback has received a response', '2025-04-23 23:40:36'),
+(36, 6, 46, 'Your feedback has received a response', '2025-04-23 23:45:52'),
+(37, 9, 45, 'Your feedback has received a response', '2025-04-23 23:47:14'),
+(38, 9, 45, 'Your feedback has received a response', '2025-04-24 00:04:15'),
+(39, 1, 47, 'New feedback submitted by dada Igi', '2025-04-24 00:40:35'),
+(40, 1, 48, 'New feedback submitted by dada Igi', '2025-04-24 00:40:49'),
+(41, 7, 48, 'Your feedback has received a response', '2025-04-24 00:41:21');
 
 -- --------------------------------------------------------
 
@@ -82,6 +113,19 @@ CREATE TABLE `response` (
   `timestamp` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `response`
+--
+
+INSERT INTO `response` (`responseID`, `feedbackID`, `adminID`, `responseText`, `timestamp`) VALUES
+(1, 40, 4, 'Great that it went well. Thanks for the feedback.', '2025-04-23 23:31:50'),
+(2, 44, 4, 'hhh', '2025-04-23 23:39:45'),
+(3, 42, 4, 'Well noted. Thanks!', '2025-04-23 23:40:36'),
+(4, 46, 4, 'well noted, Thanks, Sun Ko!', '2025-04-23 23:45:52'),
+(5, 45, 4, 'Thanks for the feedback, enjoy the seamlessness of the features!', '2025-04-23 23:47:14'),
+(6, 45, 4, 'kjhghjk', '2025-04-24 00:04:15'),
+(7, 48, 4, 'being handled! Thanks for feedback.', '2025-04-24 00:41:21');
+
 -- --------------------------------------------------------
 
 --
@@ -92,7 +136,7 @@ CREATE TABLE `user` (
   `userID` int(11) NOT NULL,
   `username` varchar(255) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
-  `role` enum('Admin','Customer') NOT NULL,a
+  `role` enum('Admin','Customer') NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -101,11 +145,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`userID`, `username`, `email`, `role`, `password`) VALUES
-(0, 'Karake Lili', 'lili@gmail.com', '', '$2y$10$BJiJrSM1YsB7zcT4lIcHH.x6B4G0QMw.q25g/aeCsW025VkB.zvlq'),
-(1, 'Admin User', 'admin@example.com', 'Admin', 'hashed_password_example'),
-(2, 'Customer User', 'customer@example.com', 'Customer', 'hashed_password_example'),
+(0, 'Koko Wawa', 'koko@gmail.com', 'Admin', '$2y$10$gn36ilM1w96XqUGQNPvOleHN/Xl2.x1FF/zKO8.n7ZyUIXRKrsMOe'),
 (4, 'Del Ish', 'delice@gmail.com', 'Admin', '$2y$10$kP0XToxyMECwra7CzcHs7eWOiBF3ygPdBPMXzTSlGtpr0y915GdvO'),
-(5, 'Sinam Kk', 'sinam@gmail.com', 'Customer', '$2y$10$nxzAuYD.4AAm5aT3abgROeXYWAXVGPqlgdleD6z6m9ZsR2n9ezbsa');
+(6, 'Kirikou Abba', 'kirikou@gmail.com', 'Customer', '$2y$10$Smc4568hEQBJVQqVoDHqSu7t/RYD/o/x0m.WDoVIEiY.2hm08l.dm'),
+(7, 'dada Igi', 'dada@gmail.com', 'Customer', '$2y$10$jnbqqnTmsaCyEpVGqMQJF.HiKLJsOW/dBEW8/vZWgIkHEO.EGcDE6');
 
 --
 -- Indexes for dumped tables
@@ -149,13 +192,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `feedbackID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `feedbackID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `notification`
 --
 ALTER TABLE `notification`
-  MODIFY `notificationID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `notificationID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
+--
+-- AUTO_INCREMENT for table `response`
+--
+ALTER TABLE `response`
+  MODIFY `responseID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
@@ -166,20 +215,6 @@ ALTER TABLE `notification`
 --
 ALTER TABLE `feedback`
   ADD CONSTRAINT `feedback_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`) ON DELETE CASCADE;
-
---
--- Constraints for table `notification`
---
-ALTER TABLE `notification`
-  ADD CONSTRAINT `notification_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`) ON DELETE CASCADE,
-  ADD CONSTRAINT `notification_ibfk_2` FOREIGN KEY (`feedbackID`) REFERENCES `feedback` (`feedbackID`) ON DELETE CASCADE;
-
---
--- Constraints for table `response`
---
-ALTER TABLE `response`
-  ADD CONSTRAINT `response_ibfk_1` FOREIGN KEY (`feedbackID`) REFERENCES `feedback` (`feedbackID`) ON DELETE CASCADE,
-  ADD CONSTRAINT `response_ibfk_2` FOREIGN KEY (`adminID`) REFERENCES `user` (`userID`) ON DELETE SET NULL;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
