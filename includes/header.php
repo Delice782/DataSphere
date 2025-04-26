@@ -6,9 +6,22 @@ require_once __DIR__ . '/session.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DataSphere - <?php echo isset($pageTitle) ? $pageTitle : 'Welcome'; ?></title>
+    <title><?php echo isset($pageTitle) ? $pageTitle : 'DataSphere'; ?></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/sidebar.css">
+    <link rel="stylesheet" href="../assets/css/profile.css">
+    <link rel="stylesheet" href="../assets/css/delete_account.css">
+    <link rel="stylesheet" href="../assets/css/submit_feedback.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/manage_feedback.css">
+    <link rel="stylesheet" href="../assets/css/manage_users.css">
+    <link rel="stylesheet" href="../assets/css/respond_feedback.css">
+    <link rel="stylesheet" href="../assets/css/feedback_styles.css">
+    
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -16,13 +29,16 @@ require_once __DIR__ . '/session.php';
         </div>
         <nav>
             <ul>
-                <li><a href="../views/home.php">Home</a></li>
+                <li><a href="../views/index.php#home">Home</a></li>
+                <li><a href="../views/index.php#features">Features</a></li>
+                <li><a href="../views/index.php#testimonials">Testimonials</a></li>
+                <li><a href="../views/index.php#about">About</a></li>
+                <li><a href="../views/index.php#contact">Contact</a></li>
                 <?php if (isLoggedIn()): ?>
                     <li><a href="../views/dashboard.php">Dashboard</a></li>
-                    <li><a href="../controllers/logout.php">Logout</a></li>
+                    <li><a href="../controllers/logout.php" class="btn-primary">Logout</a></li>
                 <?php else: ?>
-                    <li><a href="../views/login.php">Login</a></li>
-                    <li><a href="../views/signup.php">Sign Up</a></li>
+                    <li><a href="../views/login.php" class="btn-primary">Login</a></li>
                 <?php endif; ?>
             </ul>
         </nav>
