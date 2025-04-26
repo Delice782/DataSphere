@@ -1,4 +1,4 @@
-# DataSphere: A Web-Based Customer Feedback Platform
+# DataSphere: A Web-Based Customer Feedback Platform 
 
 ## Overview
 DataSphere is a web-based platform designed to help African businesses streamline customer feedback collection, management, and analysis. By centralizing feedback, integrating sentiment analysis, and offering real-time insights, DataSphere empowers businesses to enhance customer satisfaction and improve decision-making.
