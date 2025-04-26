@@ -1,3 +1,5 @@
+
+
 <?php
 // Database configuration
 $servername = "localhost";
