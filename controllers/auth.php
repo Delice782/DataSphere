@@ -20,6 +20,7 @@ switch ($action) {
 }
 
 // Handle user registration
+// Handle user registration
 function handleSignup($conn) {
     // Get form data
     $userName = isset($_POST['userName']) ? trim($_POST['userName']) : '';
@@ -27,15 +28,15 @@ function handleSignup($conn) {
     $password = isset($_POST['password']) ? $_POST['password'] : '';
     $confirm_password = isset($_POST['confirm_password']) ? $_POST['confirm_password'] : '';
     
-    // Always set role as Customer for security - admins should be created manually or through a separate admin panel
+    // Always set role as Customer for security
     $role = 'Customer';
     
-    // Validate form data
+    // Validate required fields
     if (empty($userName) || empty($email) || empty($password) || empty($confirm_password)) {
         redirect_with_error("signup.php", "All fields are required");
     }
     
-    // Check if email is valid
+    // Validate email format
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         redirect_with_error("signup.php", "Invalid email format");
     }
@@ -43,6 +44,11 @@ function handleSignup($conn) {
     // Check if passwords match
     if ($password !== $confirm_password) {
         redirect_with_error("signup.php", "Passwords do not match");
+    }
+    
+    // Check password strength
+    if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,}$/', $password)) {
+        redirect_with_error("signup.php", "Password must be at least 6 characters long and include an uppercase letter, lowercase letter, number, and special character.");
     }
     
     // Check if email already exists
@@ -76,6 +82,7 @@ function handleSignup($conn) {
         redirect_with_error("signup.php", "Registration failed: " . $conn->error);
     }
 }
+
 
 // Handle user login
 function handleLogin($conn) {
