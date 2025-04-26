@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2025 at 02:53 AM
+-- Generation Time: Apr 27, 2025 at 01:12 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -31,7 +31,8 @@ CREATE TABLE `feedback` (
   `feedbackID` int(11) NOT NULL,
   `userID` int(11) DEFAULT NULL,
   `content` text NOT NULL,
-  `rating` int(11) DEFAULT NULL CHECK (`rating` between 1 and 5),
+  `category` varchar(50) DEFAULT NULL,
+  `rating` int(11) DEFAULT NULL,
   `timestamp` datetime DEFAULT current_timestamp(),
   `status` varchar(255) NOT NULL DEFAULT 'pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -40,13 +41,20 @@ CREATE TABLE `feedback` (
 -- Dumping data for table `feedback`
 --
 
-INSERT INTO `feedback` (`feedbackID`, `userID`, `content`, `rating`, `timestamp`, `status`) VALUES
-(47, 7, 'malfunctionality', 2, '2025-04-24 00:40:35', 'pending'),
-(48, 7, 'usability issues', 1, '2025-04-24 00:40:49', 'responded');
+INSERT INTO `feedback` (`feedbackID`, `userID`, `content`, `category`, `rating`, `timestamp`, `status`) VALUES
+(68, 4, 'kl', 'performance', NULL, '2025-04-26 16:46:57', 'pending'),
+(69, 4, 'll', 'content', NULL, '2025-04-26 16:47:03', 'pending'),
+(70, 4, 'lloo', 'other', NULL, '2025-04-26 16:47:13', 'responded'),
+(71, 4, 'ss', 'bug', NULL, '2025-04-26 16:47:18', 'pending'),
+(72, 5, 'lloo', 'performance', NULL, '2025-04-26 16:58:12', 'pending'),
+(73, 5, 'qqw', 'other', NULL, '2025-04-26 16:58:20', 'pending'),
+(74, 5, 'aa', 'feature', NULL, '2025-04-26 16:58:25', 'responded'),
+(75, 5, 'ee', 'performance', NULL, '2025-04-26 16:58:31', 'pending'),
+(76, 5, 'iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii', 'content', NULL, '2025-04-26 20:42:07', 'pending'),
+(77, 5, 'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo', 'ui', NULL, '2025-04-26 21:39:11', 'pending');
 
 -- --------------------------------------------------------
 
---
 -- Table structure for table `notification`
 --
 
@@ -97,7 +105,44 @@ INSERT INTO `notification` (`notificationID`, `userID`, `feedbackID`, `message`,
 (38, 9, 45, 'Your feedback has received a response', '2025-04-24 00:04:15'),
 (39, 1, 47, 'New feedback submitted by dada Igi', '2025-04-24 00:40:35'),
 (40, 1, 48, 'New feedback submitted by dada Igi', '2025-04-24 00:40:49'),
-(41, 7, 48, 'Your feedback has received a response', '2025-04-24 00:41:21');
+(41, 7, 48, 'Your feedback has received a response', '2025-04-24 00:41:21'),
+(42, 7, 47, 'Your feedback has received a response', '2025-04-24 01:03:51'),
+(43, 1, 49, 'New feedback submitted by dada Igi', '2025-04-24 01:04:18'),
+(44, 1, 50, 'New feedback submitted by dada Igi', '2025-04-24 01:04:28'),
+(45, 7, 50, 'Your feedback has received a response', '2025-04-24 01:04:51'),
+(46, 7, 49, 'Your feedback has received a response', '2025-04-24 01:05:16'),
+(47, 1, 51, 'New feedback submitted by dada Igi', '2025-04-26 13:52:28'),
+(48, 1, 52, 'New feedback submitted by dada Igiran', '2025-04-26 15:10:03'),
+(49, 1, 53, 'New feedback submitted by dada Igiran', '2025-04-26 15:10:19'),
+(50, 1, 54, 'New feedback submitted by dada Igiran', '2025-04-26 15:10:32'),
+(51, 1, 55, 'New feedback submitted by dada Igiran', '2025-04-26 15:37:19'),
+(52, 1, 56, 'New feedback submitted by dada Igiran', '2025-04-26 15:38:03'),
+(53, 1, 57, 'New feedback submitted by dada Igiran', '2025-04-26 15:39:35'),
+(54, 1, 58, 'New feedback submitted by dada Igiran', '2025-04-26 15:40:20'),
+(55, 1, 59, 'New feedback submitted by dada Igiran', '2025-04-26 15:40:25'),
+(56, 1, 60, 'New feedback submitted by dada Igiran', '2025-04-26 15:40:29'),
+(57, 1, 61, 'New feedback submitted by dada Igiran', '2025-04-26 15:40:33'),
+(58, 1, 62, 'New feedback submitted by dada Igiran', '2025-04-26 15:40:36'),
+(59, 1, 63, 'New feedback submitted by dada Igiran', '2025-04-26 15:41:16'),
+(60, 1, 64, 'New feedback submitted by dada Igiran', '2025-04-26 15:41:25'),
+(61, 1, 65, 'New feedback submitted by dada Igiran', '2025-04-26 15:41:29'),
+(62, 1, 66, 'New feedback submitted by dada Igiran', '2025-04-26 15:41:37'),
+(63, 1, 67, 'New feedback submitted by dada Igiran', '2025-04-26 15:41:43'),
+(64, 7, 67, 'Your feedback has received a response', '2025-04-26 15:42:29'),
+(65, 7, 64, 'Your feedback has received a response', '2025-04-26 15:48:05'),
+(66, 1, 68, 'New feedback submitted by s', '2025-04-26 16:46:57'),
+(67, 1, 69, 'New feedback submitted by s', '2025-04-26 16:47:03'),
+(68, 1, 70, 'New feedback submitted by s', '2025-04-26 16:47:13'),
+(69, 1, 71, 'New feedback submitted by s', '2025-04-26 16:47:18'),
+(70, 1, 72, 'New feedback submitted by sa', '2025-04-26 16:58:12'),
+(71, 1, 73, 'New feedback submitted by sa', '2025-04-26 16:58:20'),
+(72, 1, 74, 'New feedback submitted by sa', '2025-04-26 16:58:25'),
+(73, 1, 75, 'New feedback submitted by sa', '2025-04-26 16:58:31'),
+(74, 4, 70, 'Your feedback has received a response', '2025-04-26 17:04:24'),
+(75, 4, 70, 'Your feedback has received a response', '2025-04-26 17:12:21'),
+(76, 5, 74, 'Your feedback has received a response', '2025-04-26 20:40:01'),
+(77, 1, 76, 'New feedback submitted by sa', '2025-04-26 20:42:07'),
+(78, 1, 77, 'New feedback submitted by sa', '2025-04-26 21:39:11');
 
 -- --------------------------------------------------------
 
@@ -124,7 +169,15 @@ INSERT INTO `response` (`responseID`, `feedbackID`, `adminID`, `responseText`, `
 (4, 46, 4, 'well noted, Thanks, Sun Ko!', '2025-04-23 23:45:52'),
 (5, 45, 4, 'Thanks for the feedback, enjoy the seamlessness of the features!', '2025-04-23 23:47:14'),
 (6, 45, 4, 'kjhghjk', '2025-04-24 00:04:15'),
-(7, 48, 4, 'being handled! Thanks for feedback.', '2025-04-24 00:41:21');
+(7, 48, 4, 'being handled! Thanks for feedback.', '2025-04-24 00:41:21'),
+(8, 47, 4, 'sorry', '2025-04-24 01:03:51'),
+(9, 50, 4, 'sorry', '2025-04-24 01:04:51'),
+(10, 49, 4, 'sorry, will be worked on.', '2025-04-24 01:05:16'),
+(11, 67, 4, 'Thanks for the feedback. will work on it', '2025-04-26 15:42:29'),
+(12, 64, 4, 'tHanks\r\n', '2025-04-26 15:48:05'),
+(13, 70, 5, 'thanks', '2025-04-26 17:04:24'),
+(14, 70, 5, 'kk', '2025-04-26 17:12:21'),
+(15, 74, 5, 'oo', '2025-04-26 20:40:01');
 
 -- --------------------------------------------------------
 
@@ -145,10 +198,17 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`userID`, `username`, `email`, `role`, `password`) VALUES
-(0, 'Koko Wawa', 'koko@gmail.com', 'Admin', '$2y$10$gn36ilM1w96XqUGQNPvOleHN/Xl2.x1FF/zKO8.n7ZyUIXRKrsMOe'),
-(4, 'Del Ish', 'delice@gmail.com', 'Admin', '$2y$10$kP0XToxyMECwra7CzcHs7eWOiBF3ygPdBPMXzTSlGtpr0y915GdvO'),
-(6, 'Kirikou Abba', 'kirikou@gmail.com', 'Customer', '$2y$10$Smc4568hEQBJVQqVoDHqSu7t/RYD/o/x0m.WDoVIEiY.2hm08l.dm'),
-(7, 'dada Igi', 'dada@gmail.com', 'Customer', '$2y$10$jnbqqnTmsaCyEpVGqMQJF.HiKLJsOW/dBEW8/vZWgIkHEO.EGcDE6');
+(1, 'Del Ishim', 'del@gmail.com', 'Admin', '$2y$10$k.Z46YCjmRBS5P3cNEj9G.TRO3Hgzjz8fAsKKZ8kfRFoXH/5Uxa5y'),
+(2, 'Dada', 'd@gmail.com', 'Customer', '$2y$10$DjxaeOHrTwfznfjlWbgTMOJHKviDtRZaqi8Aa.OD6sgki4Nasj9.a'),
+(3, 'Kaka', 'k@gmail.com', 'Admin', '$2y$10$ZLhFBZFkbsRvpFT.5oJ2JeyDTbk.NpFCJkYQ89Sj.zG6KaDziuWAq'),
+(4, 's', 's@gmail.com', 'Customer', '$2y$10$Jg8gRUFFZP4XdUBHnaLmGO0ZoaUMWqG5.WVHcvJmDZM7z7bm4dKgC'),
+(5, 'sassss', 'sa@gmail.com', 'Admin', '$2y$10$V0RwRnc7TQ19VwyGsjA2VuW7JXgc0zcCxVc3FtNlZvGbB4SPUODCm'),
+(6, 'kk', 'k0@gmail.com', 'Admin', '$2y$10$7VLWOfqneTUr7p50xQSUmOtqdhSp4gAA5twoqLkFY1J7ud9ROQJiC'),
+(7, 'ki', 'ki@gmail.com', 'Admin', '$2y$10$vlxR7.q2Jivqhv3aC4VIeONjspizszRTbDBHnejAdOci6nLU/nPZG'),
+(8, 'ka', 'ka@gmail.com', 'Customer', '$2y$10$U0mks1hbRxPwwkrsehlpu.XI2MjqJs4n5bLOD8M6mBMucG7sqcem.'),
+(11, 'vv', 'v@gmail.com', 'Customer', '$2y$10$OaB2Lq8pRdOurMXwSOayj.sNnJsQvT9EWxTrceASV3BHHg9cxpu/.'),
+(12, 'll', 'l@gmail.com', 'Customer', '$2y$10$xF8vOFhL/jqjOge0XfbrEemNEPy8tfFT8uI0f4N0VOxoiRjQdHRB6'),
+(13, 'cc', 'cc@gmail.com', 'Customer', '$2y$10$Tj1jmgDUTjvM3kO9HMamLeWTK28AREpwDM0sgz9x5V7FRcjIUsOv6');
 
 --
 -- Indexes for dumped tables
@@ -192,19 +252,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `feedbackID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `feedbackID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `notification`
 --
 ALTER TABLE `notification`
-  MODIFY `notificationID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `notificationID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT for table `response`
 --
 ALTER TABLE `response`
-  MODIFY `responseID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `responseID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
