@@ -1,0 +1,168 @@
+
+/* Common styling for both feedback pages */
+.feedback-container {
+    padding: 20px;
+}
+
+.feedback-header h1 {
+    margin-bottom: 5px;
+}
+.feedback-header {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    margin-bottom: 20px;
+}
+
+.feedback-header .description {
+    margin-top: 5px; 
+    font-size: 1em;
+    color: #666;
+}
+
+.feedback-history {
+    margin-top: 20px;
+}
+
+.feedback-item {
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.feedback-meta {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+    align-items: center;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.feedback-status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.feedback-status.open {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.feedback-status.closed {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.feedback-status.in-progress {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.feedback-content {
+    margin-bottom: 10px;
+    white-space: normal;
+    word-break: break-word;
+    max-width: 100%;
+    line-height: 1.5;
+}
+
+.admin-responses {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.response-item {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-left: 3px solid #28a745;
+    background-color: #e9f9ef;
+    border-radius: 3px;
+}
+
+.response-meta {
+    font-size: 0.85em;
+    color: #777;
+    margin-bottom: 3px;
+}
+
+.admin-name {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.response-content {
+    white-space: normal;
+    word-break: break-word;
+    max-width: 100%;
+    line-height: 1.5;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    padding: 8px 12px;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+}
+
+.pagination a.active {
+    background-color: #1a56db;
+    color: white;
+    border-color: #1a56db;
+}
+
+.pagination a:hover {
+    background-color: #eee;
+}
+
+.no-feedback {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.action-bar {
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    padding: 8px 16px;
+    background-color: #1a56db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: #1a56db;
+}
+
+.delete-btn {
+    text-decoration: none;  /* Removes the underline */
+    color: #dc3545;         /* Red color for the delete icon */
+    margin-left: 10px;      /* Adds some spacing */
+    font-size: 16px;        /* Controls icon size */
+    display: inline-block;  /* Better spacing control */
+}
+
+.delete-btn:hover {
+    color: #ffffff;         /* Darker red on hover */
+}
