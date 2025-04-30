@@ -1,0 +1,377 @@
+
+/* Main layout structure */
+.main-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f9fafb;
+}
+
+.content-area {
+    flex: 1;
+    padding: 20px;
+    margin-left: 250px; /* adjust based on your sidebar width */
+}
+
+.dashboard-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.user-welcome {
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+/* Success and error messages */
+.message {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.message.success {
+    background-color: #d1fae5;
+    color: #065f46;
+    border-left: 4px solid #10b981;
+}
+
+.message.error {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border-left: 4px solid #ef4444;
+}
+
+/* Feedback card */
+.feedback-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.feedback-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #6b7280;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.back-btn:hover {
+    color: #1a56db;
+} */
+
+/* Feedback details */
+.feedback-detail {
+    padding: 0 0 20px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.detail-row {
+    margin-bottom: 10px;
+}
+
+.detail-row .label {
+    font-weight: 600;
+    color: #374151;
+    min-width: 80px;
+    display: inline-block;
+}
+
+.feedback-content {
+    padding: 15px;
+    background: #f9fafb;
+    border-radius: 8px;
+    margin: 10px 0;
+    white-space: normal;
+    word-break: break-word;
+    max-width: 100%;
+    line-height: 1.5;
+}
+
+/* Star ratings */
+.stars {
+    color: #f59e0b; /* Amber/yellow color for stars */
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+/* Status badges */
+.status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.status-new {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.status-inprogress {
+    background: #dbeafe;
+    color: #1a56db;
+}
+
+.status-resolved {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+/* Response form */
+.response-form {
+    padding: 0 0 20px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.response-form h3 {
+    margin-bottom: 15px;
+    color: #1f2937;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    height: 120px;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1a56db;
+    box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.1);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    border: none;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.primary-btn {
+    background: #1a56db;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #1a56db;
+}
+
+.secondary-btn {
+    background: #9ca3af;
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.secondary-btn:hover {
+    background: #6b7280;
+}
+
+/* Previous responses */
+.previous-responses {
+    padding-top: 10px;
+}
+
+.previous-responses h3 {
+    margin-bottom: 15px;
+    color: #1f2937;
+}
+
+.response-item {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.response-item:last-child {
+    border-bottom: none;
+}
+
+.response-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.admin-name {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.response-date {
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.response-text {
+    padding: 12px 15px;
+    background: #f3f4f6;
+    border-radius: 6px;
+    white-space: normal;
+    word-break: break-word;
+    max-width: 100%;
+    line-height: 1.5;
+}
+
+/* Not found message */
+.not-found {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.not-found p {
+    font-size: 1.1rem;
+    color: #6b7280;
+}
+
+.not-found a {
+    color: #1a56db;
+    text-decoration: none;
+}
+
+.not-found a:hover {
+    text-decoration: underline;
+}
+
+.status-responded {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .content-area {
+        margin-left: 0;
+        padding: 15px;
+    }
+    
+    .feedback-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.2s;
+        border: none;
+    }
+    
+    .btn i {
+        margin-right: 6px;
+    }
+    
+    .btn-primary {
+        background-color: #1a56db;
+        color: white;
+    }
+    
+    .btn-primary:hover {
+        background-color: #1a56db;
+    }
+    
+    .btn-secondary {
+        background-color: #6c757d;
+        color: white;
+    }
+    
+    .btn-secondary:hover {
+        background-color: #5c636a;
+    }
+    
+    .btn-danger {
+        background-color: #dc3545;
+        color: white;
+    }
+    
+    .btn-danger:hover {
+        background-color: #bb2d3b;
+    }
+    
+    /* For the button spacing in action groups */
+    .form-actions {
+        display: flex;
+        gap: 8px;
+        margin-top: 15px;
+    }
+    
+    /* For the back navigation button */
+    .back-navigation {
+        margin-bottom: 20px;
+    }
+}

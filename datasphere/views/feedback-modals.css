@@ -1,0 +1,151 @@
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 60%;
+    max-width: 800px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 10px;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #555;
+}
+
+.feedback-detail {
+    margin-bottom: 20px;
+}
+
+.feedback-detail p {
+    margin: 5px 0;
+}
+
+.feedback-detail .label {
+    font-weight: 600;
+    color: #374151;
+}
+
+.feedback-content {
+    padding: 15px;
+    background: #f9fafb;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.response-history {
+    margin-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 15px;
+}
+
+.response-item {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.response-item:last-child {
+    border-bottom: none;
+}
+
+.response-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #6b7280;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+}
+
+.response-text {
+    padding: 10px;
+    background: #f3f4f6;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    height: 100px;
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background: #1a56db;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #1a56db;
+}
+
+.btn-secondary {
+    background: #6b7280;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background: #4b5563;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        margin: 30% auto;
+    }
+}

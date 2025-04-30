@@ -1,0 +1,123 @@
+/* Main container layout */
+.main-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 250px;
+    background-color: #1a56db; /* Darker blue for better contrast */
+    color: #fff;
+    height: 100vh; 
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: all 0.3s;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.sidebar-header h3 {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+.sidebar-menu ul li {
+    margin-bottom: 5px;
+}
+
+.sidebar-menu ul li a {
+    padding: 12px 20px;
+    color: #ffffff; /* Solid white instead of transparent */
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.2s;
+    border-left: 4px solid transparent;
+    /* Add text shadow for better readability */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-menu ul li a i {
+    font-size: 1.1rem;
+    width: 24px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.sidebar-menu ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-left-color: #fff;
+}
+
+.sidebar-menu ul li a.active {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-left-color: #fff;
+    font-weight: 600;
+}
+
+/* Content area styles */
+.content-area {
+    flex: 1;
+    padding: 25px;
+    margin-left: 250px;
+    background: #f8f9fa;
+    min-height: 100vh;
+}
+
+/* Responsive sidebar */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 70px;
+    }
+    
+    .sidebar-header h3 {
+        font-size: 0;
+    }
+    
+    .sidebar-menu ul li a span {
+        display: none;
+    }
+    
+    .sidebar-menu ul li a i {
+        font-size: 1.3rem;
+        margin-right: 0;
+    }
+    
+    .content-area {
+        margin-left: 70px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        width: 0;
+        opacity: 0;
+    }
+    
+    .content-area {
+        margin-left: 0;
+    }
+    
+    .sidebar.active {
+        width: 250px;
+        opacity: 1;
+    }
+}
