@@ -54,7 +54,7 @@ function handleSignup($conn) {
     }
     
     // Check if email already exists
-    $stmt = $conn->prepare("SELECT userID FROM User WHERE email = ?");
+    $stmt = $conn->prepare("SELECT userID FROM user WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -64,7 +64,7 @@ function handleSignup($conn) {
     }
     
     // Generate a new user ID (find max and add 1)
-    $result = $conn->query("SELECT MAX(userID) as maxID FROM User");
+    $result = $conn->query("SELECT MAX(userID) as maxID FROM user");
     $row = $result->fetch_assoc();
     $newUserID = ($row['maxID'] ?? 0) + 1;
     
@@ -72,7 +72,7 @@ function handleSignup($conn) {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     
     // Insert new user
-    $stmt = $conn->prepare("INSERT INTO User (userID, userName, email, role, password) VALUES (?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO user (userID, userName, email, role, password) VALUES (?, ?, ?, ?, ?)");
     $stmt->bind_param("issss", $newUserID, $userName, $email, $role, $hashed_password);
     
     if ($stmt->execute()) {
@@ -98,7 +98,7 @@ function handleLogin($conn) {
     }
     
     // Check if user exists
-    $stmt = $conn->prepare("SELECT userID, userName, email, role, password FROM User WHERE email = ?");
+    $stmt = $conn->prepare("SELECT userID, userName, email, role, password FROM user WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
