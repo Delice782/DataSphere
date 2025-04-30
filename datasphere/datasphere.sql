@@ -19,8 +19,9 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `datasphere`
---
-
+DROP DATABASE IF EXISTS datasphere;
+CREATE DATABASE datasphere;
+USE datasphere;
 -- --------------------------------------------------------
 
 --
