@@ -15,7 +15,6 @@ DataSphere is a web-based platform designed to help African businesses streamlin
 - **Frontend**: HTML, CSS, Bootstrap, React
 - **Backend**: PHP
 - **Database**: MySQL
-- **Sentiment Analysis**: Python
 - **Project Management**: Jira (Agile & Scrum-based workflow)
 
 ## Progress Updates
