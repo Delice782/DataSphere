@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "My Feedback";
-$currentPage = "my_feedback"; // Used for highlighting active menu item
+$currentPage = "my_feedback"; 
 require_once '../includes/header.php';
 require_once '../includes/db.php';
 
