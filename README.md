@@ -1,5 +1,3 @@
-![image](https://github.com/user-attachments/assets/340b2f63-5751-40c3-9a95-69be977b4907)# DataSphere: A Web-Based Customer Feedback Platform
-
 ## Overview
 DataSphere is a full-stack web application built to help African businesses collect, manage, and visualize customer feedback. It centralizes feedback and provides insightful analytics through graphical dashboards, allowing businesses to identify key trends and improve decision-making.
 
