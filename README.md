@@ -1,14 +1,16 @@
 # DataSphere: A Web-Based Customer Feedback Platform
 
 ## Overview
-DataSphere is a web-based platform designed to help African businesses streamline customer feedback collection, management, and analysis. By centralizing feedback, integrating sentiment analysis, and offering real-time insights, DataSphere empowers businesses to enhance customer satisfaction and improve decision-making.
+DataSphere is a full-stack web application built to help African businesses collect, manage, and visualize customer feedback. It centralizes feedback and provides insightful analytics through graphical dashboards, allowing businesses to identify key trends and improve decision-making.
+
+This platform integrates Agile development practices using Scrum and was built collaboratively in five 2-week sprints.
 
 ## Features (Planned)
-- **User Authentication**: Secure login and role-based access for customers and administrators.
-- **Feedback Collection**: Structured forms and rating systems for seamless customer input.
-- **Admin Dashboard**: Centralized view of feedback submissions, sentiment trends, and response management.
-- **Notifications**: Real-time alerts for feedback responses and important updates.
-- **Security Measures**: Data encryption, GDPR compliance, and user activity logging.
+- **User Authentication**: Secure login system with role-based access for admins and customers.
+- **Feedback Collection**: Forms for structured feedback submission with categorized feedbacks and comments.
+- **Admin Dashboard**: Interactive dashboard with pie chart visualizations showing trending feedback topics.
+- **Notifications**: Real-time alerts for new feedback submissions to keep admins updated.
+- **Security Measures**: Encrypted password storage and user activity tracking.
 
 ## Tech Stack
 - **Frontend**: HTML, CSS, Bootstrap, React
