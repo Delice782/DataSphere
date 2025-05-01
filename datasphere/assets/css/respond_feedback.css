@@ -9,7 +9,7 @@
 .content-area {
     flex: 1;
     padding: 20px;
-    margin-left: 250px; /* adjust based on your sidebar width */
+    margin-left: 250px; 
 }
 
 .dashboard-container {
@@ -69,19 +69,6 @@
     border-bottom: 1px solid #e5e7eb;
 }
 
-/* .back-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    color: #6b7280;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.back-btn:hover {
-    color: #1a56db;
-} */
-
 /* Feedback details */
 .feedback-detail {
     padding: 0 0 20px 0;
@@ -113,7 +100,7 @@
 
 /* Star ratings */
 .stars {
-    color: #f59e0b; /* Amber/yellow color for stars */
+    color: #f59e0b; 
     font-size: 1.1rem;
     letter-spacing: 2px;
 }
