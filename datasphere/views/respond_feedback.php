@@ -13,18 +13,17 @@ $feedback = null;
 $responses = [];
 $feedback_id = null;
 
-// Process feedback ID from post or session (avoiding URL exposure)
+// Process feedback ID from post or session 
 if (isset($_POST['feedback_id']) && is_numeric($_POST['feedback_id'])) {
     $feedback_id = (int)$_POST['feedback_id'];
     // Store feedback_id in session for future references
     $_SESSION['current_feedback_id'] = $feedback_id;
 } elseif (isset($_GET['id']) && is_numeric($_GET['id'])) {
-    // We still accept ID from GET but immediately store it in session
-    // and redirect to remove it from URL
+    // accept ID from GET but immediately store it in session
     $feedback_id = (int)$_GET['id'];
     $_SESSION['current_feedback_id'] = $feedback_id;
     
-    // Redirect to same page without the ID parameter
+    // Redirect to same page 
     header("Location: respond_feedback.php");
     exit;
 } elseif (isset($_SESSION['current_feedback_id'])) {
@@ -120,10 +119,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['send_response'])) {
 // Check for success message from session
 if (isset($_SESSION['feedback_message'])) {
     $message = $_SESSION['feedback_message'];
-    unset($_SESSION['feedback_message']); // Clear the message after displaying it
+    unset($_SESSION['feedback_message']);
 }
 
-// Check if we already have responses (to hide the response form)
+// Check if we already have responses 
 $show_response_form = count($responses) === 0;
 ?>
 
