@@ -1,6 +1,6 @@
 /**
  * Smooth scrolling functionality for DataSphere website
- * This script handles anchor links to page sections
+ * This script handles anchor links to page section
  */
 document.addEventListener('DOMContentLoaded', function() {
     // Get all links with hash
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const headerHeight = document.querySelector('header').offsetHeight;
                     
                     window.scrollTo({
-                        top: targetElement.offsetTop - headerHeight - 20, // 20px extra padding
+                        top: targetElement.offsetTop - headerHeight - 20, 
                         behavior: 'smooth'
                     });
                     
