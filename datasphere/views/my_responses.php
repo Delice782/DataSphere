@@ -22,7 +22,7 @@ $totalItems = mysqli_fetch_assoc($countResult)['total'];
 $totalPages = ceil($totalItems / $itemsPerPage);
 mysqli_stmt_close($countStmt);
 
-// Get user's feedback with pagination - removed rating from query
+// Get user's feedback with pagination 
 $query = "SELECT feedbackID, content, timestamp, status
           FROM feedback
           WHERE userID = ?
@@ -132,7 +132,7 @@ $feedbackResult = mysqli_stmt_get_result($stmt);
 </div>
 
 <style>
-    /* Basic styling - feel free to enhance */
+
     /* Common styling for both feedback pages */
     .feedback-container {
         padding: 20px;
@@ -277,13 +277,5 @@ $feedbackResult = mysqli_stmt_get_result($stmt);
         background-color: #1a56db;
     }
 </style>
-
-<script>
-    // Basic JavaScript for potential enhancements (currently empty)
-    document.addEventListener('DOMContentLoaded', function() {
-        // You can add JavaScript functionality here if needed,
-        // for example, to handle dynamic loading of responses or UI interactions.
-    });
-</script>
 
 <?php require_once '../includes/footer.php'; ?>
