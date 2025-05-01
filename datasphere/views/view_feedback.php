@@ -1,8 +1,8 @@
 <?php
 $pageTitle = "View Feedback";
-$currentPage = "manage_feedback"; // Used for highlighting active menu item
+$currentPage = "manage_feedback"; 
 require_once '../includes/header.php';
-require_once '../includes/db.php'; // Make sure you have a db connection file
+require_once '../includes/db.php'; 
 
 // Require user to be logged in
 requireLogin();
@@ -16,8 +16,7 @@ $message = '';
 
 // Process feedback ID from various sources
 if (isset($_GET['feedback'])) {
-    // We accept ID from GET initially, but store it in session
-    // and redirect to remove it from URL
+    // accept ID from GET initially, but store it in sessio
     $feedback_id = intval(base64_decode($_GET['feedback']));
     $_SESSION['view_feedback_id'] = $feedback_id;
     
@@ -131,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['send_response'])) {
 // Check for success message from session
 if (isset($_SESSION['feedback_message'])) {
     $message = $_SESSION['feedback_message'];
-    unset($_SESSION['feedback_message']); // Clear the message after displaying it
+    unset($_SESSION['feedback_message']); 
     
     // Refresh feedback and response data after successful submission
     $stmt = $conn->prepare("SELECT f.*, u.username FROM feedback f 
@@ -258,7 +257,7 @@ function formatDateTime($timestamp) {
                 <?php endif; ?>
             </div>
             
-            <!-- Add response form - Only show if no response exists yet -->
+            <!-- Add response form 
             <?php if (!$has_response): ?>
             <div class="add-response-section">
                 <h2>Add Response</h2>
@@ -280,7 +279,7 @@ function formatDateTime($timestamp) {
     </div>
 </div>
 
-<!-- Add some additional CSS for the feedback view -->
+<!-- styling the feedback view -->
 <style>
     .back-button {
         margin-bottom: 20px;
@@ -413,7 +412,7 @@ function formatDateTime($timestamp) {
         font-weight: 600;
     }
 
-    /* Add a bit of spacing to messages */
+    /* Add spacing to messages */
     .message {
         margin-bottom: 20px;
         padding: 12px;
