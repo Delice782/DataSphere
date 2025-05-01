@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Profile";
-$currentPage = "profile"; // Used for highlighting active menu item
+$currentPage = "profile"; 
 require_once '../includes/header.php';
 require_once '../includes/db.php';
 
@@ -154,9 +154,7 @@ $user = mysqli_fetch_assoc($result);
                         </div>
                     </form>
                 </div>
-            </div>
-           
-                
+            </div>  
                 
                 <?php
                 // Get user's feedback count
