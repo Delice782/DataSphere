@@ -21,7 +21,7 @@ This platform integrates Agile development practices using Scrum and was built c
 - Sprints:
    - Sprint 1: Project Planning & Requirements
    - Sprint 2: Authentication & Role System
-   - Sprint 3: Feedback Submission & Storage
+   - Sprint 3: Feedback Submission & Response
    - Sprint 4: Admin Dashboard & Data Visualization
    - Sprint 5: Testing and Documentation
 
