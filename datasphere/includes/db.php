@@ -1,8 +1,8 @@
 <?php
 // Database configuration
 $servername = "localhost";
-$username = "datasphere_user"; // Default XAMPP username
-$password = "Developer@123"; // Default XAMPP password (blank)
+$username = "datasphere_user"; 
+$password = "Developer@123";
 $dbname = "datasphere";
 
 // Create connection
