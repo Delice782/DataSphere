@@ -11,12 +11,6 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 --
 -- Database: `datasphere`
 DROP DATABASE IF EXISTS datasphere;
@@ -219,11 +213,6 @@ INSERT INTO `user` (`userID`, `username`, `email`, `role`, `password`) VALUES
 (21, 'Salome', 'sad@gmail.com', 'Customer', '$2y$10$BWsozE7aYYDYtrcSiAZjmOuCckQmS1GS4t9E3VumiTYWwIy1HvgOS'),
 (23, 'swww', 'we@gmail.com', 'Admin', '$2y$10$V1CJSsWcxQT5cMtqXibaqOZ3xpEjYFKF6duxWf511dlAgOP0XIYT2');
 
---
--- Indexes for dumped tables
---
-
---
 -- Indexes for table `feedback`
 --
 ALTER TABLE `feedback`
@@ -275,17 +264,8 @@ ALTER TABLE `notification`
 ALTER TABLE `response`
   MODIFY `responseID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
---
--- Constraints for dumped tables
---
-
---
 -- Constraints for table `feedback`
 --
 ALTER TABLE `feedback`
   ADD CONSTRAINT `feedback_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`) ON DELETE CASCADE;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
