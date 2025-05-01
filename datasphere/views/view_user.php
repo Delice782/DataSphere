@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "View User";
-$currentPage = "manage_users"; // Keep the same active menu item
+$currentPage = "manage_users"; 
 require_once '../includes/header.php';
 require_once '../includes/db.php';
 
@@ -13,8 +13,7 @@ $message = '';
 
 // Process user ID from various sources
 if (isset($_GET['id'])) {
-    // We accept ID from GET initially, but store it in session
-    // and redirect to remove it from URL
+    // accept ID from GET initially, but store it in session
     $user_id = intval($_GET['id']);
     $_SESSION['view_user_id'] = $user_id;
     
@@ -48,8 +47,7 @@ if ($result->num_rows === 0) {
 $user = $result->fetch_assoc();
 $stmt->close();
 
-// Optional: Fetch additional user data if needed
-// For example, you might want to fetch feedback submitted by this user
+// Fetch additional user data if needed
 $stmt = $conn->prepare("SELECT COUNT(*) as feedback_count FROM feedback WHERE userID = ?");
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
@@ -118,7 +116,7 @@ $stmt->close();
                 </div>
             </div>
             
-            <!-- Optional: Add feedback history section -->
+            <!-- add feedback history section -->
             <?php if ($feedback_count > 0): ?>
             <div class="feedback-history-section">
                 <h2>Feedback History</h2>
@@ -175,7 +173,7 @@ $stmt->close();
                     </tbody>
                 </table>
                 
-                <!-- Simple pagination -->
+                <!-- pagination -->
                 <?php if ($total_pages > 1): ?>
                 <div class="pagination">
                     <?php for ($i = 1; $i <= $total_pages; $i++): ?>
@@ -193,7 +191,7 @@ $stmt->close();
     </div>
 </div>
 
-<!-- Add/Edit User Modal - Copy from manage_users.php -->
+<!-- Add/Edit User Modal -->
 <div id="userModal" class="modal">
     <div class="modal-content">
         <div class="modal-header">
@@ -229,7 +227,7 @@ $stmt->close();
     </div>
 </div>
 
-<!-- Add some additional CSS for the user details view -->
+<!-- styling the user details view -->
 <style>
     .back-button {
         margin-bottom: 20px;
