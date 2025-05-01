@@ -10,7 +10,7 @@ $feedbackID = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 $userID = $_SESSION['user_id'];
 
 if ($feedbackID > 0) {
-    // First verify this feedback belongs to the current user
+    // verify this feedback belongs to the current user
     $checkQuery = "SELECT status FROM feedback WHERE feedbackID = ? AND userID = ?";
     $checkStmt = mysqli_prepare($conn, $checkQuery);
     mysqli_stmt_bind_param($checkStmt, "ii", $feedbackID, $userID);
