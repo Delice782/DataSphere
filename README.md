@@ -7,7 +7,6 @@ DataSphere is a web-based platform designed to help African businesses streamlin
 - **User Authentication**: Secure login and role-based access for customers and administrators.
 - **Feedback Collection**: Structured forms and rating systems for seamless customer input.
 - **Admin Dashboard**: Centralized view of feedback submissions, sentiment trends, and response management.
-- **Sentiment Analysis**: AI-powered insights to categorize feedback as positive, neutral, or negative.
 - **Notifications**: Real-time alerts for feedback responses and important updates.
 - **Security Measures**: Data encryption, GDPR compliance, and user activity logging.
 
