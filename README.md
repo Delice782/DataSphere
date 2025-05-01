@@ -25,7 +25,7 @@ Sprint 3: Feedback Submission & Storage
 Sprint 4: Admin Dashboard & Data Visualization
 Sprint 5: Testing and Documentation
 
-### Usage
+## Usage
 - Register/Login:
 New users are assigned the role of Customer by default.
 
@@ -45,7 +45,7 @@ View all submissions, track top feedback categories, and visualize trends throug
 - Test the Live App:
 [Test the Live App](http://172.174.224.159/DataSphere/datasphere)
 
-### Purpose
+## Purpose
 DataSphere was created to:
 
 - Centralize customer feedback collection.
