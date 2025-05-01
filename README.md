@@ -32,9 +32,9 @@ New users are assigned the role of Customer by default.
 - Admin Testing (for role-based functionality):
 Use the credentials below to log in as an Admin:
 
-- Email: utosun@gmail.com
+   - Email: utosun@gmail.com
 
-- Password: UmutTosun@123
+   - Password: UmutTosun@123
 
 - Feedback Submission:
 Customers can submit feedback through a simple form.
