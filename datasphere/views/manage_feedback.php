@@ -1,9 +1,9 @@
 <?php
 $pageTitle = "Manage Feedback";
-$currentPage = "manage_feedback"; // Used for highlighting active menu item
+$currentPage = "manage_feedback"; 
 require_once '../includes/header.php';
-require_once '../includes/db.php'; // Make sure you have a db connection file
-require_once '../includes/pagination.php'; // Include our new pagination helper
+require_once '../includes/db.php'; 
+require_once '../includes/pagination.php'; 
 
 // Require user to be logged in
 requireLogin();
@@ -68,7 +68,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['send_response'])) {
 }
 
 // Fetch feedback data for display
-// Store the original search term for display in the form
 $original_search = $_GET['search'] ?? '';
 $status_filter = $_GET['status_filter'] ?? '';
 
