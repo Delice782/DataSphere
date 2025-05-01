@@ -22,7 +22,6 @@ switch ($action) {
 }
 
 // Handle user registration
-// Handle user registration
 function handleSignup($conn) {
     // Get form data
     $userName = isset($_POST['userName']) ? trim($_POST['userName']) : '';
