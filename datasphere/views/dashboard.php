@@ -1,8 +1,8 @@
 <?php
 $pageTitle = "Dashboard";
-$currentPage = "dashboard"; // Used for highlighting active menu item
+$currentPage = "dashboard"; 
 require_once '../includes/header.php';
-require_once '../includes/db.php'; // Make sure you have a db connection file
+require_once '../includes/db.php'; 
 
 // Require user to be logged in
 requireLogin();
@@ -86,8 +86,8 @@ $feedbackCategories = [
                             $pendingCount = isset($row['pending_feedback']) ? $row['pending_feedback'] : 0;
                             echo htmlspecialchars($pendingCount);
                             
-                            // Check if pending feedback increased compared to previous period
-                            $trend = "up"; // or "down" based on your comparison
+                            
+                            $trend = "up"; 
                             ?>
                             <span class="trend-indicator <?php echo $trend; ?>">
                                 <i class="fas fa-arrow-<?php echo $trend; ?>"></i>
