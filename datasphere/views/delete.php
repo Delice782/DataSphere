@@ -36,7 +36,7 @@ if ($action === 'delete_user' && isset($_POST['user_id'])) {
     $conn->begin_transaction();
     
     try {
-        // First, delete related records (e.g., feedback, responses)
+    
         // Delete notifications related to user's feedback
         $stmt = $conn->prepare("DELETE n FROM notification n 
                               JOIN feedback f ON n.feedbackID = f.feedbackID 
@@ -71,7 +71,7 @@ if ($action === 'delete_user' && isset($_POST['user_id'])) {
         $stmt->execute();
         $stmt->close();
         
-        // Finally, delete the user
+        // delete the user
         $stmt = $conn->prepare("DELETE FROM user WHERE userID = ?");
         $stmt->bind_param("i", $user_id);
         $stmt->execute();
@@ -108,7 +108,7 @@ elseif ($action === 'delete_feedback' && isset($_POST['feedback_id'])) {
         $stmt->execute();
         $stmt->close();
         
-        // Finally, delete the feedback
+        // delete the feedback
         $stmt = $conn->prepare("DELETE FROM feedback WHERE feedbackID = ?");
         $stmt->bind_param("i", $feedback_id);
         $stmt->execute();
