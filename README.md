@@ -13,10 +13,10 @@ This platform integrates Agile development practices using Scrum and was built c
 ## Development Process
 - Methodology: Agile (Scrum)
 - Team Roles:
-  Lydia Amoakoaa: Scrum Master / Frontend
-  Delice Ishimwe: Product Owner / Backend
-  Sinam Ametewee: Frontend Developer
-  Susanna Agyapong: Backend Developer
+   - Lydia Amoakoaa: Scrum Master / Frontend 
+   - Delice Ishimwe: Product Owner / Backend
+   - Sinam Ametewee: Frontend Developer
+   - Susanna Agyapong: Backend Developer
 
 - Sprints:
 Sprint 1: Project Planning & Requirements
