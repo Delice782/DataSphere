@@ -156,13 +156,13 @@
 }
 
 .delete-btn {
-    text-decoration: none;  /* Removes the underline */
-    color: #dc3545;         /* Red color for the delete icon */
-    margin-left: 10px;      /* Adds some spacing */
-    font-size: 16px;        /* Controls icon size */
-    display: inline-block;  /* Better spacing control */
+    text-decoration: none;  
+    color: #dc3545;         
+    margin-left: 10px;    
+    font-size: 16px;        
+    display: inline-block;  
 }
 
 .delete-btn:hover {
-    color: #ffffff;         /* Darker red on hover */
+    color: #ffffff;      
 }
