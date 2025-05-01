@@ -1,9 +1,9 @@
 <?php
 $pageTitle = "Manage Users";
-$currentPage = "manage_users"; // Used for highlighting active menu item
+$currentPage = "manage_users"; 
 require_once '../includes/header.php';
-require_once '../includes/db.php'; // Make sure you have a db connection file
-require_once '../includes/pagination.php'; // Include the pagination helper
+require_once '../includes/db.php'; 
+require_once '../includes/pagination.php';
 
 // Require user to be logged in
 requireLogin();
@@ -13,7 +13,7 @@ $userID = $_SESSION['user_id'];
 
 // Handle form submissions
 $message = '';
-$messageType = 'success'; // Default to success, change to error if needed
+$messageType = 'success'; 
 
 // Add or update user
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_user'])) {
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_user'])) {
         $messageType = 'error';
     } else {
         if (empty($user_id)) {
-            // Add new user - first check if email already exists
+            // Add new user - check if email already exists
             $check_stmt = $conn->prepare("SELECT COUNT(*) as count FROM user WHERE email = ?");
             $check_stmt->bind_param("s", $email);
             $check_stmt->execute();
@@ -44,14 +44,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_user'])) {
                 $message = "Error: Password is required for new users";
                 $messageType = 'error';
             } else {
-                // Validate password strength (same as in signup)
+                // Validate password strength
                 if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,}$/', $password)) {
                     $message = "Error: Password must be at least 6 characters long and include an uppercase letter, lowercase letter, number, and special character.";
                     $messageType = 'error';
                 } else {
                     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-                    
-                    // Get the highest userID and add 1 to ensure uniqueness
                     $result = $conn->query("SELECT MAX(userID) AS max_id FROM user");
                     $row = $result->fetch_assoc();
                     $new_user_id = ($row['max_id'] ?? 0) + 1;
@@ -70,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_user'])) {
                         $stmt->close();
                     } catch (mysqli_sql_exception $e) {
                         // This is a fallback in case the initial check didn't catch the duplicate
-                        if ($e->getCode() == 1062) { // Duplicate entry error
+                        if ($e->getCode() == 1062) { 
                             $message = "Error: Email address already exists. Please use a different email.";
                             $messageType = 'error';
                         } else {
@@ -81,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_user'])) {
                 }
             }
         } else {
-            // Update existing user - first check if email already exists but belongs to a different user
+            // Update existing user 
             $check_stmt = $conn->prepare("SELECT COUNT(*) as count FROM user WHERE email = ? AND userID != ?");
             $check_stmt->bind_param("si", $email, $user_id);
             $check_stmt->execute();
@@ -150,9 +148,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_user'])) {
     // Log the received value for debugging
     error_log("Delete request received for user ID: " . $user_id);
     
-    if ($user_id > 0) { // Make sure it's a valid ID (greater than zero)
+    if ($user_id > 0) { 
         try {
-            // Simple direct deletion approach
+            // deletion 
             $stmt = $conn->prepare("DELETE FROM user WHERE userID = ?");
             $stmt->bind_param("i", $user_id);
             
@@ -462,7 +460,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Scroll to the top of the modal to ensure error is visible
         modalMessage.scrollIntoView({ behavior: 'smooth', block: 'start' });
         
-        // Optionally hide the message after some time
+        // hide the message after some time
         setTimeout(() => {
             modalMessage.style.display = "none";
         }, 8000);
@@ -477,7 +475,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Scroll to ensure error is visible
         clientMessage.scrollIntoView({ behavior: 'smooth', block: 'start' });
         
-        // Optionally hide the message after some time
+        // hide the message 
         setTimeout(() => {
             clientMessage.style.display = "none";
         }, 8000);
@@ -551,7 +549,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         modalTitle.textContent = 'Edit User';
         passwordNote.textContent = '(Leave blank to keep current password)';
-        modalMessage.style.display = 'none'; // Clear any previous error messages
+        modalMessage.style.display = 'none'; 
         userModal.style.display = 'block';
     }
     
@@ -562,7 +560,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Function to prepare delete confirmation - defined in global scope
+// Function to prepare delete confirmation 
 function prepareDelete(userId) {
     console.log('Preparing delete for user ID:', userId);
     document.getElementById('delete_user_id').value = userId;
