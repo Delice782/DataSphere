@@ -74,7 +74,7 @@ DataSphere was created to:
 - Offer a secure, easy-to-navigate platform for both customers and admins.
 
 ## Tech Stack
-- **Frontend**: HTML, CSS, JavaScript, Bootstrap, Font Awesome
+- **Frontend**: HTML, CSS, JavaScript, Font Awesome
 - **Backend**: PHP
 - **Database**: MySQL
 - **Project Management**: Jira (Agile & Scrum-based workflow)      
