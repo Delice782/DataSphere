@@ -1,5 +1,5 @@
 <?php
-// Entry point - redirect to home.php
+// Entry point - redirect to index.php
 header("Location: views/index.php");
 exit();
 ?>
