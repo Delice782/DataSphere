@@ -1,4 +1,4 @@
- 
+  
 ## Project Overview
 DataSphere is a full-stack web application built to help African businesses collect, manage, and visualize customer feedback. It centralizes feedback and provides insightful analytics through graphical dashboards, allowing businesses to identify key trends and improve decision-making.
 
