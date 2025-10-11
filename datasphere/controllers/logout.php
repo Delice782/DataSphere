@@ -1,4 +1,4 @@
-                      <?php
+                     <?php
 require_once '../includes/session.php';
 
 // Destroy all session data
@@ -20,5 +20,6 @@ $_SESSION['temp_logout'] = true;
 header("Location: ../views/login.php");
 exit();
 ?>
+
 
 
