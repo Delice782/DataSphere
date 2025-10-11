@@ -61,7 +61,7 @@ function handleSignup($conn) {
     if ($result->num_rows > 0) {
         redirect_with_error("signup.php", "Email already registered");
     }
-    
+     
     // Generate a new user ID (find max and add 1)
     $result = $conn->query("SELECT MAX(userID) as maxID FROM user");
     $row = $result->fetch_assoc();
@@ -132,4 +132,5 @@ function redirect_with_error($page, $message) {
     exit();
 }
 ?>
+
 
