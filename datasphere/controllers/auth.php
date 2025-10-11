@@ -1,4 +1,4 @@
-
+ 
 <?php
 // auth.php
 require_once '../includes/db.php';
@@ -29,7 +29,7 @@ function handleSignup($conn) {
     $password = isset($_POST['password']) ? $_POST['password'] : '';
     $confirm_password = isset($_POST['confirm_password']) ? $_POST['confirm_password'] : '';
     
-    // Always set role as Customer for security
+    // Always set the role as Customer for security
     $role = 'Customer';
     
     // Validate required fields
@@ -132,3 +132,4 @@ function redirect_with_error($page, $message) {
     exit();
 }
 ?>
+
