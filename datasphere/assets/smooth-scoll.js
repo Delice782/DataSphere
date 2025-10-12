@@ -1,4 +1,4 @@
-  /**
+   /**
  * Smooth scrolling functionality for DataSphere website
  * This script handles anchor links to page section
  */
@@ -59,5 +59,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100);
     }
 });
+
 
 
