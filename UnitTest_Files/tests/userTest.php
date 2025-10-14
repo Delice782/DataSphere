@@ -1,3 +1,4 @@
+
 <?php
 
 // tests/UserManagerTest.php
@@ -70,4 +71,5 @@ class userTest extends TestCase {
         $this->assertEquals("User deleted successfully", $response['message']);
     }
 }
+
 ?>
