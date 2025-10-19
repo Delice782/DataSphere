@@ -1,4 +1,4 @@
-          
+           
 <?php
 // auth.php
 require_once '../includes/db.php';
@@ -132,6 +132,7 @@ function redirect_with_error($page, $message) {
     exit();
 }
 ?>
+
 
 
 
