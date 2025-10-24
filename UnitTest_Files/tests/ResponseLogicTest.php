@@ -1,4 +1,4 @@
- 
+  
 <?php
 use PHPUnit\Framework\TestCase;
 
@@ -51,5 +51,6 @@ class ResponseLogicTest extends TestCase {
         $this->assertGreaterThan(0, $notificationResult->num_rows);
     }
 }
+
 
 
