@@ -1,4 +1,4 @@
-
+ 
 <?php
 require_once '../includes/session.php';
 
@@ -21,6 +21,7 @@ $_SESSION['temp_logout'] = true;
 header("Location: ../views/login.php");
 exit();
 ?>
+
 
 
 
