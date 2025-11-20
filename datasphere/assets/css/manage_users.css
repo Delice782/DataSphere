@@ -1,4 +1,4 @@
-/* Main Layout Structure */
+ /* Main Layout Structure */
 .main-container {
     display: flex;
     min-height: 100vh;
@@ -377,4 +377,5 @@
         flex-wrap: wrap;
         justify-content: center;
     }
+
 }
