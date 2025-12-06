@@ -1,4 +1,4 @@
- 
+  
 </main>
     <footer>
         <p>&copy; <?php echo date('Y'); ?> DataSphere. All rights reserved.</p>
@@ -8,5 +8,6 @@
 </body>
 
 </html>
+
 
 
