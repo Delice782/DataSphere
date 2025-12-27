@@ -1,3 +1,4 @@
+
 <?php
 
 // src/UserManager.php
@@ -74,4 +75,5 @@ class Users {
         return ['success' => $success, 'message' => $success ? 'User deleted successfully' : 'Delete failed.'];
     }
 }
+
 ?>
